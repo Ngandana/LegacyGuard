@@ -1,0 +1,208 @@
+{
+ "tag": "before",
+ "ground_truth_defects": 13,
+ "decoys": 7,
+ "real_findings_excluded": 20,
+ "detection": {
+  "per_cwe": {
+   "CWE-862": {
+    "TP": 3,
+    "FP": 0,
+    "FN": 1,
+    "precision": 1.0,
+    "recall": 0.75
+   },
+   "CWE-798": {
+    "TP": 3,
+    "FP": 2,
+    "FN": 0,
+    "precision": 0.6,
+    "recall": 1.0
+   },
+   "CWE-89": {
+    "TP": 3,
+    "FP": 0,
+    "FN": 0,
+    "precision": 1.0,
+    "recall": 1.0
+   },
+   "CWE-916": {
+    "TP": 3,
+    "FP": 0,
+    "FN": 0,
+    "precision": 1.0,
+    "recall": 1.0
+   }
+  },
+  "total": {
+   "TP": 12,
+   "FP": 2,
+   "FN": 1,
+   "precision": 0.86,
+   "recall": 0.92
+  },
+  "false_positives": [
+   {
+    "at": "InjectedDefects.java:18",
+    "cwe": "CWE-798",
+    "was_decoy": true
+   },
+   {
+    "at": "InjectedDefects.java:19",
+    "cwe": "CWE-798",
+    "was_decoy": true
+   }
+  ],
+  "missed": [
+   "InjectedAdminController.java:7 (CWE-862)"
+  ]
+ },
+ "pipeline": {
+  "seconds": 108,
+  "rows": [
+   {
+    "finding": "InjectedDefects.java:14",
+    "cwe": "CWE-798",
+    "rule": "lg-hardcoded-credential",
+    "attempts": [
+     "resolved"
+    ],
+    "final": "resolved",
+    "gate_note": "attempt 1: resolved - re-scan confirmed the finding is gone; build gate: compiles (baseline tests not runnable, so regression tests skipped)"
+   },
+   {
+    "finding": "InjectedDefects.java:15",
+    "cwe": "CWE-798",
+    "rule": "lg-hardcoded-credential",
+    "attempts": [
+     "resolved"
+    ],
+    "final": "resolved",
+    "gate_note": "attempt 1: resolved - re-scan confirmed the finding is gone; build gate: compiles (baseline tests not runnable, so regression tests skipped)"
+   },
+   {
+    "finding": "InjectedDefects.java:16",
+    "cwe": "CWE-798",
+    "rule": "lg-hardcoded-credential",
+    "attempts": [
+     "resolved"
+    ],
+    "final": "resolved",
+    "gate_note": "attempt 1: resolved - re-scan confirmed the finding is gone; build gate: compiles (baseline tests not runnable, so regression tests skipped)"
+   },
+   {
+    "finding": "InjectedDefects.java:23",
+    "cwe": "CWE-89",
+    "rule": "lg-sql-injection",
+    "attempts": [
+     "build_failed",
+     "no_patch",
+     "no_patch"
+    ],
+    "final": "no_patch",
+    "gate_note": "attempt 1: build_failed - re-scan confirmed the finding is gone; build gate: patched code no longer compiles: [ERROR]  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch. [ERROR] Re-run Maven using the -X switch to enable full debug logging. [ERROR]  [ERROR] For more information about the errors and possible solutions, please read the following articles: [ERROR] [Help 1] http"
+   },
+   {
+    "finding": "InjectedDefects.java:28",
+    "cwe": "CWE-89",
+    "rule": "lg-sql-injection",
+    "attempts": [
+     "build_failed",
+     "no_patch",
+     "no_patch"
+    ],
+    "final": "no_patch",
+    "gate_note": "attempt 1: build_failed - re-scan confirmed the finding is gone; build gate: patched code no longer compiles: [ERROR]  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch. [ERROR] Re-run Maven using the -X switch to enable full debug logging. [ERROR]  [ERROR] For more information about the errors and possible solutions, please read the following articles: [ERROR] [Help 1] http"
+   },
+   {
+    "finding": "InjectedDefects.java:33",
+    "cwe": "CWE-89",
+    "rule": "lg-sql-injection",
+    "attempts": [
+     "build_failed",
+     "no_patch",
+     "no_patch"
+    ],
+    "final": "no_patch",
+    "gate_note": "attempt 1: build_failed - re-scan confirmed the finding is gone; build gate: patched code no longer compiles: [ERROR]  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch. [ERROR] Re-run Maven using the -X switch to enable full debug logging. [ERROR]  [ERROR] For more information about the errors and possible solutions, please read the following articles: [ERROR] [Help 1] http"
+   },
+   {
+    "finding": "InjectedAdminController.java:10",
+    "cwe": "CWE-862",
+    "rule": "lg-missing-authz",
+    "attempts": [
+     "build_failed",
+     "no_patch",
+     "no_patch"
+    ],
+    "final": "no_patch",
+    "gate_note": "attempt 1: build_failed - re-scan confirmed the finding is gone; build gate: patched code no longer compiles: [ERROR]  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch. [ERROR] Re-run Maven using the -X switch to enable full debug logging. [ERROR]  [ERROR] For more information about the errors and possible solutions, please read the following articles: [ERROR] [Help 1] http"
+   },
+   {
+    "finding": "InjectedAdminController.java:13",
+    "cwe": "CWE-862",
+    "rule": "lg-missing-authz",
+    "attempts": [
+     "build_failed",
+     "no_patch",
+     "no_patch"
+    ],
+    "final": "no_patch",
+    "gate_note": "attempt 1: build_failed - re-scan confirmed the finding is gone; build gate: patched code no longer compiles: [ERROR]  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch. [ERROR] Re-run Maven using the -X switch to enable full debug logging. [ERROR]  [ERROR] For more information about the errors and possible solutions, please read the following articles: [ERROR] [Help 1] http"
+   },
+   {
+    "finding": "InjectedAdminController.java:16",
+    "cwe": "CWE-862",
+    "rule": "lg-missing-authz",
+    "attempts": [
+     "build_failed",
+     "no_patch",
+     "no_patch"
+    ],
+    "final": "no_patch",
+    "gate_note": "attempt 1: build_failed - re-scan confirmed the finding is gone; build gate: patched code no longer compiles: [ERROR]  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch. [ERROR] Re-run Maven using the -X switch to enable full debug logging. [ERROR]  [ERROR] For more information about the errors and possible solutions, please read the following articles: [ERROR] [Help 1] http"
+   },
+   {
+    "finding": "InjectedDefects.java:44",
+    "cwe": "CWE-916",
+    "rule": "lg-weak-password-storage",
+    "attempts": [
+     "build_failed",
+     "no_patch",
+     "no_patch"
+    ],
+    "final": "no_patch",
+    "gate_note": "attempt 1: build_failed - re-scan confirmed the finding is gone; build gate: patched code no longer compiles: [ERROR]  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch. [ERROR] Re-run Maven using the -X switch to enable full debug logging. [ERROR]  [ERROR] For more information about the errors and possible solutions, please read the following articles: [ERROR] [Help 1] http"
+   },
+   {
+    "finding": "InjectedDefects.java:45",
+    "cwe": "CWE-916",
+    "rule": "lg-weak-password-storage",
+    "attempts": [
+     "build_failed",
+     "no_patch",
+     "no_patch"
+    ],
+    "final": "no_patch",
+    "gate_note": "attempt 1: build_failed - re-scan confirmed the finding is gone; build gate: patched code no longer compiles: [ERROR]  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch. [ERROR] Re-run Maven using the -X switch to enable full debug logging. [ERROR]  [ERROR] For more information about the errors and possible solutions, please read the following articles: [ERROR] [Help 1] http"
+   },
+   {
+    "finding": "InjectedDefects.java:46",
+    "cwe": "CWE-916",
+    "rule": "lg-weak-password-storage",
+    "attempts": [
+     "build_failed",
+     "no_patch",
+     "no_patch"
+    ],
+    "final": "no_patch",
+    "gate_note": "attempt 1: build_failed - re-scan confirmed the finding is gone; build gate: patched code no longer compiles: [ERROR]  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch. [ERROR] Re-run Maven using the -X switch to enable full debug logging. [ERROR]  [ERROR] For more information about the errors and possible solutions, please read the following articles: [ERROR] [Help 1] http"
+   }
+  ],
+  "outcome": {
+   "verified": 3,
+   "build_failed": 9
+  },
+  "n": 12
+ }
+}

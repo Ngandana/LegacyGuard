@@ -1,0 +1,28 @@
+rules:
+  - id: lg-hardcoded-credential
+    languages: [java]
+    severity: ERROR
+    message: Hard-coded credential
+    metadata: {cwe: "CWE-798"}
+    patterns:
+      - pattern: String $VAR = "...";
+      - metavariable-regex:
+          metavariable: $VAR
+          regex: (?i).*(password|passwd|secret|api_?key|token).*
+  - id: lg-weak-password-storage
+    languages: [java]
+    severity: WARNING
+    message: Weak or unprotected password storage
+    metadata: {cwe: "CWE-916"}
+    pattern-either:
+      - pattern: NoOpPasswordEncoder.getInstance()
+      - pattern: DigestUtils.md5Hex(...)
+      - pattern: DigestUtils.sha1Hex(...)
+  - id: lg-sql-injection
+    languages: [java]
+    severity: ERROR
+    message: SQL built by string concatenation
+    metadata: {cwe: "CWE-89"}
+    pattern-either:
+      - pattern: $S.executeQuery("..." + $X)
+      - pattern: $S.executeUpdate("..." + $X)

@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+anthropic
+pyyaml
+pytest
+httpx
+# psycopg[binary]   # only if DATABASE_URL points at PostgreSQL
+# semgrep           # optional second engine (Linux/macOS/WSL; not required)

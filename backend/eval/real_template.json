@@ -1,0 +1,1 @@
+{"seconds": 3, "findings": 20, "by_rule": {"lg-plaintext-password-lookup": 2, "lg-config-secret": 3, "lg-controller-no-authz": 15}, "verified": 3, "popia": {"likely": 2, "possible": 7, "none": 11}}

@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+node_modules/
+dist/
+*.db
+demo_repo/
+.pytest_cache/
+eval_work/

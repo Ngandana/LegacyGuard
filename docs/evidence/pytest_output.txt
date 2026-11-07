@@ -1,0 +1,64 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\USER-PC\OneDrive\projects\legacyguard\backend\.venv\Scripts\python.exe
+rootdir: C:\Users\USER-PC\OneDrive\projects\legacyguard\backend
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0, cov-7.1.0
+collecting ... collected 12 items
+tests/test_gate.py::test_patch_that_breaks_compile_is_rejected PASSED    [  8%]
+tests/test_gate.py::test_patch_that_breaks_tests_is_rejected PASSED      [ 16%]
+tests/test_gate.py::test_green_build_is_verified PASSED                  [ 25%]
+tests/test_gate.py::test_broken_baseline_does_not_block_fixes PASSED     [ 33%]
+tests/test_pipeline.py::test_detects_all_four_classes PASSED             [ 41%]
+tests/test_pipeline.py::test_fixes_verified_on_branch_and_target_untouched PASSED [ 50%]
+tests/test_pipeline.py::test_secret_never_stored_or_shown PASSED         [ 58%]
+tests/test_pipeline.py::test_approve_merges_and_audit_trail PASSED       [ 66%]
+tests/test_pipeline.py::test_reject_does_not_merge_and_request_changes_retriages PASSED [ 75%]
+tests/test_pipeline.py::test_audit_log_is_immutable_and_tamper_evident PASSED [ 83%]
+tests/test_pipeline.py::test_scope_and_path_traversal_rejected PASSED    [ 91%]
+tests/test_pipeline.py::test_findings_grouped_by_root_cause PASSED       [100%]
+============================== warnings summary ===============================
+app\main.py:17
+.venv\Lib\site-packages\fastapi\applications.py:4723
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.12.10-final-0 _______________
+Name                  Stmts   Miss  Cover
+-----------------------------------------
+app\audit.py             27      0   100%
+app\build.py             51     22    57%
+app\config.py            13      0   100%
+app\db.py                23      4    83%
+app\main.py              88      7    92%
+app\models.py            86      1    99%
+app\orchestrator.py     106     15    86%
+app\scanner.py           96     24    75%
+app\staging.py           71      3    96%
+app\triage.py            95     36    62%
+-----------------------------------------
+TOTAL                   656    112    83%
+============================== slowest durations ==============================
+2.22s call     tests/test_pipeline.py::test_reject_does_not_merge_and_request_changes_retriages
+1.81s call     tests/test_pipeline.py::test_approve_merges_and_audit_trail
+1.79s call     tests/test_gate.py::test_green_build_is_verified
+1.76s call     tests/test_pipeline.py::test_audit_log_is_immutable_and_tamper_evident
+1.67s call     tests/test_pipeline.py::test_findings_grouped_by_root_cause
+1.66s call     tests/test_pipeline.py::test_detects_all_four_classes
+1.64s call     tests/test_pipeline.py::test_fixes_verified_on_branch_and_target_untouched
+1.63s call     tests/test_pipeline.py::test_secret_never_stored_or_shown
+1.44s call     tests/test_gate.py::test_patch_that_breaks_tests_is_rejected
+1.43s call     tests/test_gate.py::test_patch_that_breaks_compile_is_rejected
+0.29s setup    tests/test_gate.py::test_patch_that_breaks_compile_is_rejected
+0.27s setup    tests/test_pipeline.py::test_audit_log_is_immutable_and_tamper_evident
+0.26s setup    tests/test_pipeline.py::test_reject_does_not_merge_and_request_changes_retriages
+0.25s setup    tests/test_pipeline.py::test_fixes_verified_on_branch_and_target_untouched
+0.23s setup    tests/test_gate.py::test_green_build_is_verified
+0.21s setup    tests/test_pipeline.py::test_secret_never_stored_or_shown
+0.21s setup    tests/test_pipeline.py::test_detects_all_four_classes
+0.21s setup    tests/test_gate.py::test_patch_that_breaks_tests_is_rejected
+0.21s setup    tests/test_pipeline.py::test_findings_grouped_by_root_cause
+0.21s setup    tests/test_pipeline.py::test_scope_and_path_traversal_rejected
+0.19s setup    tests/test_pipeline.py::test_approve_merges_and_audit_trail
+0.01s call     tests/test_pipeline.py::test_scope_and_path_traversal_rejected
+(14 durations < 0.005s hidden.  Use -vv to show these durations.)
+======================= 12 passed, 2 warnings in 22.05s =======================
